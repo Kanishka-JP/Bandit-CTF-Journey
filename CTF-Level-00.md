@@ -1,50 +1,49 @@
-# Bandit Level 00 → Level 01
+## 🛰️ Bandit Stage 00 ➜ 01
 
-## 🎯 Objective
-Connect to the Bandit server as **bandit0** and retrieve the password required to access the next level.  
-The password is stored inside a file located in the home directory.
-
----
-
-## 🧑‍💻 Credentials Provided
+### 🧷 Access Info
 **Username:** bandit0  
-**Password:** Provided by OverTheWire  
+**Server:** bandit.labs.overthewire.org  
+**Port:** 2220  
 
 ---
 
-## 🔍 Method of Solve
-After logging in, the home directory contains a file named **`readme`**.  
-This file holds the password for the next level.  
-By listing the directory contents and reading the file, the password can be retrieved easily.
+### 🎯 Task Description
+Find a readable file in the home directory and extract the password required to log in to the next level.
 
 ---
 
-## 🧪 Commands Used
-- `ls`  
-- `cat readme`  
-
----
-
-## 📸 Bandit Level 00 Screenshot
+### 🖼️ Terminal Snapshot  
 ![Bandit Level 00 Screenshot](screenshots/level00.png)
 
 ---
 
-## 🔑 Password for Level 01
-**`ZjLjTmM6FvvyrRnbb2rfNWOZOTA6ip5If`**
+### 🧭 Approach Followed
+After logging in, a simple directory check reveals a file named **`readme`**.  
+Reading this file displays the password needed for Level 01.
 
 ---
 
-## 🧠 Explanation
-- The `ls` command confirms the presence of the `readme` file in the directory.  
-- Using `cat readme` displays the content of the file, which includes the password.  
-- This level demonstrates basic Linux commands used to explore directories and read files—skills required in all upcoming Bandit levels.
+### 💻 Commands Executed
+```bash
+ls
+cat readme
+```
 
 ---
 
-## 🔐 Concept Learned
-- Basics of navigating the Linux file system  
-- Reading files using terminal commands  
-- Understanding simple file-based challenges in CTF environments  
+### 🔐 Password Retrieved (For Level 01)
+**ZjLjTmM6FvvyRnrb2rfNWOZTa6ip5If**
 
 ---
+
+### 📘 Understanding the Step
+This introductory level teaches the basics:
+- Listing files  
+- Reading file contents  
+- Understanding the structure of Bandit challenges  
+
+---
+
+### 🧠 Key Takeaway
+Even simple commands (`ls`, `cat`) are powerful when navigating Linux systems.  
+A solid foundation is important before moving to more advanced levels.
