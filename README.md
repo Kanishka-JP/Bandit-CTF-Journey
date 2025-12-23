@@ -20,7 +20,7 @@ The goal is to explore **how and why** each command works, rather than just solv
 ---
 
 ## 📂 Contents
-- Level-by-level walkthrough (Level 00 → Level 34)  
+- Level-by-level walkthrough (Level 00 → Level 33)  
 - Commands used in each stage  
 - Concepts and techniques learned throughout the journey  
 
