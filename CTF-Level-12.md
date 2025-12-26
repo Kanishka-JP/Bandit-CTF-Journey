@@ -10,21 +10,22 @@
 
 ### 🎯 Challenge Overview
 The password for the next level is stored in the file `data.txt`.  
-The file contains **multiple layers of compression and encoding** (gzip, bzip2, tar, and hex).  
-The objective is to repeatedly identify the file type, extract or decode it step by step, and finally retrieve the password.
+The file is layered with multiple encodings and compressions (hex, gzip, bzip2, tar).  
+The objective is to identify each format step by step and extract the contents until a readable password is revealed.
 
 ---
 
 ### 🖼️ Terminal Snapshot
-![Bandit Level 12 Screenshot](screenshots/level12.png)
+![Bandit Level 12 Screenshot - Part 1](screenshots/level12_part1.png)  
+![Bandit Level 12 Screenshot - Part 2](screenshots/level12_part2.png)
 
 ---
 
 ### 🧭 How It Was Solved
-A temporary working directory is created to safely extract files.  
-The file type is checked at every stage using the `file` command.  
-Depending on the detected format, appropriate tools such as `xxd`, `gzip`, `bzip2`, and `tar` are used to decode or extract the data.  
-This process is repeated multiple times until a readable ASCII file containing the password is obtained.
+A temporary working directory is used to safely manipulate files.  
+At each stage, the file type is identified using the `file` command.  
+Based on the detected format, the appropriate decoding or extraction tool is applied.  
+This process is repeated multiple times until the final ASCII text file containing the password is obtained.
 
 ---
 
@@ -66,16 +67,16 @@ This process is repeated multiple times until a readable ASCII file containing t
 ---
 
 ### 📘 Explanation
-- `file` is used repeatedly to identify the current file format.  
-- `xxd -r` reverses hex encoding back to binary data.  
-- `gzip`, `bzip2`, and `tar` are used based on the detected compression type.  
-- Files are renamed appropriately so extraction tools recognize the format.  
-- After all layers are removed, the final file is readable ASCII text containing the password.
+The `file` command is repeatedly used to determine the current file format.  
+Hex-encoded data is converted back to binary using `xxd -r`.  
+Compressed files are decompressed using `gzip` and `bzip2`.  
+Archived files are extracted using `tar`.  
+After all layers are removed, the final file is readable ASCII text containing the password.
 
 ---
 
 ### 🧠 Key Takeaway
-- Identifying file formats using `file`  
+- Identifying file formats with `file`  
 - Handling multi-layer compression and encoding  
-- Using extraction tools (`gzip`, `bzip2`, `tar`) effectively  
-- Importance of step-by-step analysis in complex file challenges  
+- Effective use of extraction tools (`gzip`, `bzip2`, `tar`)  
+- Importance of a systematic, step-by-step approach in complex challenges  
