@@ -16,13 +16,12 @@ The task is to compare the two files and identify the correct password from the 
 ---
 
 ### 🖼️ Terminal Snapshot
-Bandit Level 17 Terminal Screenshot  
-Location: `screenshots/level17.png`
+![Bandit Level 17 Screenshot](screenshots/level17.png)
 
 ---
 
 ### 🧭 How It Was Solved
-The files were compared using the `diff` command.  
+The two files were compared using the `diff` command.  
 When running `diff passwords.new passwords.old`, the output shows:
 - Lines starting with `<` belong to `passwords.new`
 - Lines starting with `>` belong to `passwords.old`
