@@ -7,21 +7,22 @@ Server: bandit.labs.overthewire.org
 Port: 2220  
 
 ### 🎯 Challenge Overview
-A program is provided that checks a **secret numeric PIN** along with the current user’s password.  
+A program is provided that verifies a **secret numeric PIN** together with the current user’s password.  
 The correct PIN is unknown and must be discovered.  
-The objective is to **brute-force the PIN** by repeatedly supplying the correct password combined with possible PIN values until the program accepts the input and reveals the password for the next level.
+The goal is to **brute-force the PIN** by repeatedly submitting the correct password along with different PIN values until the program returns the password for the next level.
 
-### 🖼️ Terminal Snapshot
-![Bandit Level 24 Screenshot](screenshots/level24.png)
+### 🖼️ Terminal Snapshots
+![Bandit Level 24 Screenshot - Part 1](screenshots/level24_part1.png)  
+![Bandit Level 24 Screenshot - Part 2](screenshots/level24_part2.png)
 
 ### 🧭 How It Was Solved
-The pin-checking program requires two inputs on a single line:  
-1. The current password for `bandit24`  
+The pin-checking program expects two inputs on a single line:
+1. The current password for `bandit24`
 2. A numeric PIN  
 
-A brute-force script is created to try all possible PIN combinations automatically.  
-The script loops through PIN values, supplies each along with the correct password, and checks the output.  
-Once the correct PIN is found, the program responds with the password for the next level.
+Manually guessing the PIN is impractical.  
+A brute-force shell script is created to automatically try all possible PIN values by combining each PIN with the correct password.  
+The script runs until the program confirms a valid combination and prints the password for the next level.
 
 ### 💻 Commands Executed
 cd /tmp  
@@ -34,12 +35,12 @@ iCi86ttT4KSNe1armKiwbQNmB3YJP3q4
 
 ### 📘 Explanation
 The checker program validates both the password and the PIN together.  
-Manual guessing is impractical due to the number of possible PIN combinations.  
-By automating the process with a shell script, each PIN is tested rapidly.  
-When the correct combination is supplied, the program confirms success and outputs the password for Bandit Level 25.
+Because there is no rate limiting, the program allows unlimited attempts.  
+Automating the process with a shell script makes it possible to test all PIN values quickly.  
+Once the correct PIN is found, the program outputs the password for Bandit Level 25.
 
 ### 🧠 Key Takeaway
-Brute-force attacks can be automated using simple scripts.  
-Programs that rely on PIN-based security are vulnerable without rate limiting.  
-Automation is a powerful technique in security testing and CTF challenges.  
-Understanding program input behavior is essential for exploitation.
+Brute-force attacks can be automated using simple shell scripts.  
+PIN-based authentication is weak without rate limiting or lockout mechanisms.  
+Automation is essential for solving repetitive security challenges efficiently.  
+Understanding how programs process input is critical in exploitation scenarios.
