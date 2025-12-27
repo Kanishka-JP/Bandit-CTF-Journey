@@ -1,57 +1,57 @@
 ## 🛰️ Bandit Level 17 ➜ 18
 
 ### 🧷 Access Info
-**Username:** bandit17  
-**Password:** Obtained from previous level  
-**Server:** bandit.labs.overthewire.org  
-**Port:** 2220  
+Username: bandit17  
+Password: Obtained from previous level  
+Server: bandit.labs.overthewire.org  
+Port: 2220  
 
 ---
 
 ### 🎯 Challenge Overview
 The home directory contains two files: `passwords.new` and `passwords.old`.  
-Both files are nearly identical, but **one line differs** between them.  
-The objective is to compare the two files and identify the **correct password**, which appears as the **second entry in the diff output**.
+Both files are almost identical, but **one line is different**.  
+The task is to compare the two files and identify the correct password from the difference.
 
 ---
 
 ### 🖼️ Terminal Snapshot
-![Bandit Level 17 Screenshot](screenshots/level17.png)
+Bandit Level 17 Terminal Screenshot  
+Location: `screenshots/level17.png`
 
 ---
 
 ### 🧭 How It Was Solved
-The `diff` command is used to compare the contents of `passwords.new` and `passwords.old`.  
-The output shows two different lines:
+The files were compared using the `diff` command.  
+When running `diff passwords.new passwords.old`, the output shows:
 - Lines starting with `<` belong to `passwords.new`
 - Lines starting with `>` belong to `passwords.old`
 
-The **second line (prefixed with `>`)** is the valid password.
+In this case, the **valid password is the line starting with `<`**, which appears as the **first entry** in the diff output.
 
 ---
 
 ### 💻 Commands Executed
-- `ls`  
-- `diff passwords.new passwords.old`  
+ls  
+diff passwords.new passwords.old  
 
 ---
 
 ### 🔐 Password Retrieved
-**pGozC8kOHLkBMOaL0ICPvLV1IjQ5F1VA**
+x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO
 
 ---
 
 ### 📘 Explanation
-- `ls` confirms both password files are present.  
-- `diff` compares the two files line by line.  
-- The first line (`<`) shows the password from `passwords.new`.  
-- The second line (`>`) shows the password from `passwords.old`.  
-- The required password is the **second one**, starting with `pGoz`.
+The `ls` command confirms both password files exist.  
+The `diff` command compares the files line by line and highlights the difference.  
+The line prefixed with `<` represents the content from `passwords.new`.  
+This line contains the correct password required to proceed to Bandit Level 18.
 
 ---
 
 ### 🧠 Key Takeaway
 - Comparing files using `diff`  
-- Understanding `diff` output symbols (`<` and `>`)  
-- Importance of command order in comparisons  
-- Carefully identifying the correct data from similar outputs  
+- Understanding diff symbols (`<` and `>`)  
+- Importance of command order while comparing files  
+- Carefully identifying the correct value from similar-looking outputs  
